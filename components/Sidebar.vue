@@ -36,7 +36,7 @@
         </li>
       </ul>
     </nav>
-    <div class="bottomWrapper">
+    <div :class="$style.bottomWrapper">
     </div>
 </aside>
 </template>

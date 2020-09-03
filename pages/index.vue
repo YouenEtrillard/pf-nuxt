@@ -4,7 +4,7 @@
       <section :class="$style.introduction">
         <h1>Hi,<br>I'm Youen,<br>web developer</h1>
         <p :class="$style.introSub">Front End Developer / Ionic / Angular</p>
-        <a routerLink="/about" class="btn btn-smart" title="But who am I ?">
+        <a href="/about" class="btn btn-smart" title="But who am I ?">
           <span class="btn-iconWrapper">
             <CustomIcon icon="who-am-i"></CustomIcon>
           </span><!--
@@ -48,6 +48,7 @@
     position: relative;
     z-index: 1;
     overflow: hidden;
+    width: 100%;
   }
 
   .logoBackground {
