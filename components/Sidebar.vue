@@ -1,15 +1,15 @@
 <template>
   <aside appAppear :class="$style.root">
     <div :class="$style.logoWrapper">
-      <a href="/" routerLinkActive="is-active" title="Go to Home page">
+      <NuxtLink to="/" routerLinkActive="is-active" title="Go to Home page">
         <CustomIcon icon="logo" alt="Logo Youen Etrillard" />
-      </a>
+      </NuxtLink>
     </div>
     <nav :class="$style.nav">
       <ul>
         <li>
-          <a
-            href="/about"
+          <NuxtLink
+            to="/about"
             routerLinkActive="is-active"
             title="Go to About page"
           >
@@ -17,11 +17,11 @@
               <CustomIcon icon="who-am-i" />
             </div>
             <span>About</span>
-          </a>
+          </NuxtLink>
         </li>
         <li>
-          <a
-            href="/works"
+          <NuxtLink
+            to="/works"
             routerLinkActive="is-active"
             title="Go to Works page"
           >
@@ -29,15 +29,15 @@
               <CustomIcon icon="works" />
             </div>
             <span>Works</span>
-          </a>
+          </NuxtLink>
         </li>
         <li>
-          <a href="/contact" fragment="contact" title="Go to Contact page">
+          <NuxtLink to="/contact" fragment="contact" title="Go to Contact page">
             <div class="iconWrapper">
               <CustomIcon icon="speech-bubbles" />
             </div>
             <span>Contact</span>
-          </a>
+          </NuxtLink>
         </li>
       </ul>
     </nav>

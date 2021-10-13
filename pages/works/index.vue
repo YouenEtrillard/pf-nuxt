@@ -38,17 +38,18 @@
           <div v-if="work.short_description" :class="$style.shortdescWrapper">
             <p :class="$style.shortdesc">{{ work.short_description }}</p>
           </div>
-          <a
+
+          <NuxtLink
             v-if="work.details"
-            :href="`works/${work.url}`"
+            :to="`works/${work.url}`"
             :class="$style.link"
-            >More on this project</a
           >
-          <template v-else>
-            <a target="_blank" :href="work.url" :class="$style.link"
-              >Go to website</a
-            >
-          </template>
+            More on this project
+          </NuxtLink>
+
+          <a v-else target="_blank" :href="work.url" :class="$style.link"
+            >Go to website</a
+          >
         </div>
       </li>
     </ul>

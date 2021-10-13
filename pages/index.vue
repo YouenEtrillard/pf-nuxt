@@ -4,7 +4,7 @@
       <section :class="$style.introduction">
         <h1>Hi,<br />I'm Youen,<br />web developer</h1>
         <p :class="$style.introSub">Front End Developer / Vue / Angular</p>
-        <a href="/about" class="btn btn-smart" title="But who am I ?">
+        <NuxtLink to="/about" class="btn btn-smart" title="But who am I ?">
           <span class="btn-iconWrapper">
             <CustomIcon icon="who-am-i"></CustomIcon> </span
           ><!--
@@ -13,7 +13,7 @@
           <span class="btn-smart-border btn-smart-border--right"></span>
           <span class="btn-smart-border btn-smart-border--bottom"></span>
           <span class="btn-smart-border btn-smart-border--left"></span>
-        </a>
+        </NuxtLink>
       </section>
       <section :class="$style.logoShowcase">
         <div :class="$style.logoWrapper">

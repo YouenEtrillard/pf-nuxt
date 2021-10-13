@@ -46,13 +46,13 @@
         :class="$style.content"
       ></div>
 
-      <div v-if="gallery" :class="$style.gallery">
+      <!-- <div v-if="gallery" :class="$style.gallery"> -->
         <img
           v-for="(picture, index) in gallery"
           :key="index"
           :src="picture"
         ></img>
-      </div>
+      <!-- </div> -->
     </template>
   </main>
 </template>
