@@ -11,7 +11,7 @@
             <nuxt-img
               v-if="fact.image.data.full_url && fact.image.data.full_url !== ''"
               :class="$style.factImg"
-              :src="fact.image.data.full_url"
+              :src="`unsplash${fact.image.data.url}`"
               :alt="fact.picture_alt"
             />
           </a>
@@ -19,7 +19,7 @@
             <nuxt-img
               v-if="fact.image.data.full_url && fact.image.data.full_url !== ''"
               :class="$style.factImg"
-              :src="fact.image.data.full_url"
+              :src="`unsplash${fact.image.data.url}`"
               :alt="fact.picture_alt"
             />
           </template>

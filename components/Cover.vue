@@ -20,7 +20,7 @@
       />
       <source srcset="~/assets/images/3440-1440.jpg" />
     </picture> -->
-    <nuxt-img src="~/assets/images/3440-1440.jpg" alt="yah" />
+    <nuxt-img src="3440-1440.jpg" alt="yah" />
   </section>
 </template>
 
@@ -52,21 +52,21 @@ export default Vue.extend({
     height: calc(var(--cover-h) - var(--sidebar-height));
   }
 
-  picture {
+  /* picture {
     // position: relative;
     height: 100vh;
-    width: 100%;
-    // overflow: hidden;
+    width: 100%; */
+  // overflow: hidden;
 
-    img {
-      // position: absolute;
-      // top: 50%;
-      // left: 50%;
-      // transform: translate3d(-50%,-50%,0);
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+  img {
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate3d(-50%,-50%,0);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
+  /* } */
 }
 </style>

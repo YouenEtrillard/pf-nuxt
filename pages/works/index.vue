@@ -14,7 +14,7 @@
           <div v-if="work.logo" :class="$style.imgWrapper">
             <nuxt-img
               :class="$style.img"
-              :src="work.logo.data.full_url"
+              :src="`unsplash${work.logo.data.url}`"
               :alt="work.title"
             />
           </div>

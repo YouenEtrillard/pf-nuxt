@@ -16,14 +16,14 @@
         <div v-if="work.logo" :class="$style.logoWrapper">
           <nuxt-img
             :class="$style.img"
-            :src="work.logo.data.full_url"
+            :src="`unsplash${work.logo.data.url}`"
             :alt="work.title"
           />
         </div>
         <div v-if="work.banner" :class="$style.bannerWrapper">
           <nuxt-img
             :class="$style.img"
-            :src="work.banner.data.full_url"
+            :src="`unsplash${work.banner.data.url}`"
             :alt="work.title"
           />
         </div>
@@ -50,7 +50,7 @@
         <nuxt-img
           v-for="(picture, imgIndex) in work.pictures"
           :key="imgIndex"
-          :src="picture.picture_id.data.full_url"
+          :src="`unsplash${picture.picture_id.data.url}`"
         />
       </div>
     </template>

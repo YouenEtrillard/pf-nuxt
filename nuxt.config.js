@@ -77,7 +77,11 @@ export default {
   },
 
   image: {
-    domains: ['api.youen-etrillard.com']
+    domains: ['api.youen-etrillard.com'],
+    alias: {
+      unsplash: 'https://api.youen-etrillard.com/directus/public/'
+    },
+    dir: 'assets/images'
   },
   /*
    ** Axios module configuration
