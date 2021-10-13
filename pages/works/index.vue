@@ -38,7 +38,10 @@
           <div v-if="work.short_description" :class="$style.shortdescWrapper">
             <p :class="$style.shortdesc">{{ work.short_description }}</p>
           </div>
-          <a v-if="work.details" :href="work.url" :class="$style.link"
+          <a
+            v-if="work.details"
+            :href="`works/${work.url}`"
+            :class="$style.link"
             >More on this project</a
           >
           <template v-else>
@@ -53,27 +56,19 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters } from 'vuex';
 
 export default {
   computed: {
-    ...mapGetters([`works`]),
-    areWorksLoaded() {
-      return this.works.length > 0;
-    },
+    ...mapGetters([`works`])
   },
-  beforeMount() {
-    if (!this.areWorksLoaded) {
-      this.$store.dispatch(`fetchResource`, 'works');
-    }
-  },
+  async fetch({ store }) {
+    await store.dispatch(`fetchResource`, 'works');
+  }
 };
 </script>
 
-<style
-  lang="scss"
-  module
->
+<style lang="scss" module>
 .root {
   display: flex;
   align-items: center;

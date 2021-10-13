@@ -51,8 +51,8 @@ import CustomIcon from '~/components/CustomIcon.vue';
 
 export default Vue.extend({
   components: {
-    CustomIcon,
-  },
+    CustomIcon
+  }
 });
 </script>
 

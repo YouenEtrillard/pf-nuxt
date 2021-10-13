@@ -19,7 +19,7 @@
         :media="`(max-width: ${largeRes})`"
       />
       <source srcset="~/assets/images/3440-1440.jpg" />
-      <img src="~/assets/images/3440-1440.jpg" alt="yah" />
+      <img src="~/assets/images/809-1080.jpg" alt="yah" />
     </picture>
   </section>
 </template>
@@ -28,15 +28,15 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  data: function () {
+  data() {
     return {
       xSmallRes: '800px',
       smallRes: '1080px',
       mediumRes: '1350px',
       largeRes: '2070px',
-      xLargeRes: '3590px',
+      xLargeRes: '3590px'
     };
-  },
+  }
 });
 </script>
 

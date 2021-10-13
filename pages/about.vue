@@ -13,7 +13,6 @@
   </main>
 </template>
 
-
 <script lang="ts">
 import Vue from 'vue';
 import Cover from '~/components/Cover.vue';
@@ -26,7 +25,7 @@ export default Vue.extend({
     Cover,
     Facts,
     Intro,
-    Resume,
+    Resume
   },
   data() {
     return {
@@ -36,15 +35,15 @@ export default Vue.extend({
           institute: 'Digital Campus Rennes',
           degree: 'Bachelor multimedia project manager',
           dates: '2015-2016',
-          order: 1,
+          order: 1
         },
         {
           id: 2,
           institute: 'IUT Laval',
           degree: 'DUT Multimedia and internet professions',
           dates: '2012-2014',
-          order: 2,
-        },
+          order: 2
+        }
       ],
       experience: [
         {
@@ -54,7 +53,7 @@ export default Vue.extend({
           dates: '06/2019 to Present',
           order: 10,
           description: null,
-          location: 'Munich, Germany',
+          location: 'Munich, Germany'
         },
         {
           id: 1,
@@ -64,7 +63,7 @@ export default Vue.extend({
           order: 20,
           description:
             "Rich web app and hybrid mobile app development\nResponsive websites integration\nMaintenance and development of new modules for WebGazelle CMS\nRole in the improvement of the company's process and ressources\n\n",
-          location: 'Rennes, France',
+          location: 'Rennes, France'
         },
         {
           id: 2,
@@ -74,7 +73,7 @@ export default Vue.extend({
           order: 30,
           description:
             "Showcase websites and online stores integration using the company's custom CMS : WebGazelle.",
-          location: 'Rennes, France',
+          location: 'Rennes, France'
         },
         {
           id: 3,
@@ -84,8 +83,8 @@ export default Vue.extend({
           order: 40,
           description:
             'Websites integration with joomla mainly for local shops and companies.',
-          location: 'Tramore, Ireland',
-        },
+          location: 'Tramore, Ireland'
+        }
       ],
       skills: [
         { id: 1, skill_name: 'HTML', order: 1 },
@@ -101,10 +100,10 @@ export default Vue.extend({
         { id: 11, skill_name: 'Webpack', order: 11 },
         { id: 12, skill_name: 'Adobe suite', order: 12 },
         { id: 13, skill_name: 'Gulp', order: 13 },
-        { id: 14, skill_name: 'Smarty 2-3', order: 14 },
-      ],
+        { id: 14, skill_name: 'Smarty 2-3', order: 14 }
+      ]
     };
-  },
+  }
 });
 </script>
 

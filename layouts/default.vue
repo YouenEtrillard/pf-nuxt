@@ -7,16 +7,16 @@
 </template>
 
 <script lang="ts">
-  import Vue from 'vue';
-  import CustomIcon from '~/components/CustomIcon.vue';
-  import Sidebar from '~/components/Sidebar.vue';
+import Vue from 'vue';
+import CustomIcon from '~/components/CustomIcon.vue';
+import Sidebar from '~/components/Sidebar.vue';
 
-  export default Vue.extend({
-    components: {
-      CustomIcon,
-      Sidebar,
-    }
-  })
+export default Vue.extend({
+  components: {
+    CustomIcon,
+    Sidebar
+  }
+});
 </script>
 
 <style module lang="scss">
