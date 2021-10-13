@@ -5,8 +5,8 @@
     </section> -->
     <ul :class="$style.list">
       <li
-        v-for="(work, index) in works"
-        :key="index"
+        v-for="(work, workIndex) in works"
+        :key="workIndex"
         class="btn btn-smart"
         :class="$style.item"
       >
@@ -20,8 +20,8 @@
           </div>
           <!-- <h2 :class="$style.work-title" v-if="work.title">{{work.title}}</h2> -->
           <p :class="$style.tags">
-            <span v-for="(tag, index) in work.tag_list" :key="index"
-              >{{ index > 0 ? ', ' : '' }}{{ tag.tag_id.tag_name }}</span
+            <span v-for="(tag, tagIndex) in work.tag_list" :key="tagIndex"
+              >{{ tagIndex > 0 ? ', ' : '' }}{{ tag.tag_id.tag_name }}</span
             >
           </p>
           <!-- <ul v-if="work.types && work.types !== ''">
@@ -60,11 +60,11 @@
 import { mapGetters } from 'vuex';
 
 export default {
-  computed: {
-    ...mapGetters([`works`])
-  },
   async fetch({ store }) {
     await store.dispatch(`fetchResource`, 'works');
+  },
+  computed: {
+    ...mapGetters([`works`])
   }
 };
 </script>

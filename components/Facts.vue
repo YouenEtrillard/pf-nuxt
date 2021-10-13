@@ -23,7 +23,7 @@
               :alt="fact.picture_alt"
             />
           </template>
-          <p :class="$style.credit" v-if="fact.credit && fact.credit !== ''">
+          <p v-if="fact.credit && fact.credit !== ''" :class="$style.credit">
             {{ fact.credit }}
           </p>
         </div>

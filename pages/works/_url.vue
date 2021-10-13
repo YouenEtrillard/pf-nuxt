@@ -29,8 +29,8 @@
         </div>
         <div v-else :class="$style.bannerText">
           <p :class="$style.tags">
-            <span v-for="(tag, index) in work.tag_list" :key="index">
-              {{ index > 0 ? ', ' : '' }}{{ tag.tag_id.tag_name }}
+            <span v-for="(tag, tagIndex) in work.tag_list" :key="tagIndex">
+              {{ tagIndex > 0 ? ', ' : '' }}{{ tag.tag_id.tag_name }}
             </span>
           </p>
 
@@ -42,17 +42,17 @@
 
       <div
         v-if="work.details"
-        v-html="work.details"
         :class="$style.content"
+        v-html="work.details"
       ></div>
 
-      <!-- <div v-if="gallery" :class="$style.gallery"> -->
+      <div v-if="work.pictures" :class="$style.gallery">
         <img
-          v-for="(picture, index) in gallery"
-          :key="index"
-          :src="picture"
-        ></img>
-      <!-- </div> -->
+          v-for="(picture, imgIndex) in work.pictures"
+          :key="imgIndex"
+          :src="picture.picture_id.data.full_url"
+        />
+      </div>
     </template>
   </main>
 </template>
@@ -61,22 +61,11 @@
 import { mapGetters } from 'vuex';
 
 export default {
-  data() {
-    return {
-      url: this.$route.params.url,
-    };
-  },
-  computed: {
-    ...mapGetters([`workByUrl`]),
-    workByUrl() {
-      return this.workByUrl(this.url);
-    },
-  },
   async asyncData({ params, $axios, payload, store }) {
     let work;
     const url = params.url;
     const workByUrl = store.getters.workByUrl(url);
-  
+
     if (payload) {
       console.log('getting work', payload.url, 'from payload');
       work = payload;
@@ -85,13 +74,25 @@ export default {
       work = workByUrl;
     } else {
       console.log('hitting the API for the work', url);
-      work = (await $axios
-        .$get(
+      work = (
+        await $axios.$get(
           `https://api.youen-etrillard.com/directus/public/_/items/works?fields=*.*.*`
-        )).data.find((work) => work.url === params.url);
+        )
+      ).data.find((work) => work.url === params.url);
     }
     return { work };
   },
+  data() {
+    return {
+      url: this.$route.params.url
+    };
+  },
+  computed: {
+    ...mapGetters([`workByUrl`]),
+    workByUrl() {
+      return this.workByUrl(this.url);
+    }
+  }
 };
 </script>
 

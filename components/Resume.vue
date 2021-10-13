@@ -11,7 +11,7 @@
           <div>
             <p v-if="xp.company && xp.company !== ''">{{ xp.company }}</p>
             <p v-if="xp.dates && xp.dates !== ''">{{ xp.dates }}</p>
-            <p :class="$style.xpTitle" v-if="xp.role && xp.role !== ''">
+            <p v-if="xp.role && xp.role !== ''" :class="$style.xpTitle">
               {{ xp.role }}
             </p>
           </div>
@@ -44,8 +44,8 @@
               {{ educ.institute }}
             </p>
             <p
-              :class="$style.educationTitle"
               v-if="educ.degree && educ.degree !== ''"
+              :class="$style.educationTitle"
             >
               {{ educ.degree }}
             </p>

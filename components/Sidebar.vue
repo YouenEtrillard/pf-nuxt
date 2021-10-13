@@ -1,7 +1,7 @@
 <template>
   <aside appAppear :class="$style.root">
     <div :class="$style.logoWrapper">
-      <NuxtLink to="/" routerLinkActive="is-active" title="Go to Home page">
+      <NuxtLink to="/" title="Go to Home page" :class="$style.navLink">
         <CustomIcon icon="logo" alt="Logo Youen Etrillard" />
       </NuxtLink>
     </div>
@@ -10,8 +10,8 @@
         <li>
           <NuxtLink
             to="/about"
-            routerLinkActive="is-active"
             title="Go to About page"
+            :class="$style.navLink"
           >
             <div class="iconWrapper">
               <CustomIcon icon="who-am-i" />
@@ -22,8 +22,8 @@
         <li>
           <NuxtLink
             to="/works"
-            routerLinkActive="is-active"
             title="Go to Works page"
+            :class="$style.navLink"
           >
             <div class="iconWrapper">
               <CustomIcon icon="works" />
@@ -32,7 +32,11 @@
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/contact" fragment="contact" title="Go to Contact page">
+          <NuxtLink
+            to="/contact"
+            title="Go to Contact page"
+            :class="$style.navLink"
+          >
             <div class="iconWrapper">
               <CustomIcon icon="speech-bubbles" />
             </div>
@@ -176,46 +180,6 @@ export default Vue.extend({
     }
   }
 
-  a {
-    display: block;
-    color: white;
-    fill: currentColor;
-    opacity: 0.7;
-    position: relative;
-    transition: all 0.25s ease-out;
-    transition-property: color, opacity;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    transition: all 0.25s ease-out;
-    transition-property: color, opacity;
-    will-change: opacity;
-    outline-offset: -2px;
-
-    .iconWrapper {
-      width: 5rem;
-      height: 5rem;
-
-      @include breakpoint($tablet) {
-        width: calc(var(--sidebar-height) / 2.2);
-        height: calc(var(--sidebar-height) / 2.2);
-      }
-    }
-
-    &:hover {
-      opacity: 1;
-    }
-
-    &.is-active {
-      opacity: 1;
-      color: var(--main-color);
-    }
-  }
-
   svg {
     max-width: 5rem;
     max-height: 5rem;
@@ -225,5 +189,47 @@ export default Vue.extend({
     margin-top: 0.3em;
     font-weight: 300;
   }
+}
+
+.navLink {
+  display: block;
+  color: white;
+  fill: currentColor;
+  opacity: 0.7;
+  position: relative;
+  transition: all 0.25s ease-out;
+  transition-property: color, opacity;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.25s ease-out;
+  transition-property: color, opacity;
+  will-change: opacity;
+  outline-offset: -2px;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.iconWrapper {
+  width: 5rem;
+  height: 5rem;
+
+  @include breakpoint($tablet) {
+    width: calc(var(--sidebar-height) / 2.2);
+    height: calc(var(--sidebar-height) / 2.2);
+  }
+}
+</style>
+
+<style>
+nav .nuxt-link-active {
+  opacity: 1;
+  color: var(--main-color);
 }
 </style>
