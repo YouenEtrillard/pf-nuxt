@@ -8,7 +8,7 @@
             target="_blank"
             :href="fact.image_link"
           >
-            <img
+            <nuxt-img
               v-if="fact.image.data.full_url && fact.image.data.full_url !== ''"
               :class="$style.factImg"
               :src="fact.image.data.full_url"
@@ -16,7 +16,7 @@
             />
           </a>
           <template v-else>
-            <img
+            <nuxt-img
               v-if="fact.image.data.full_url && fact.image.data.full_url !== ''"
               :class="$style.factImg"
               :src="fact.image.data.full_url"

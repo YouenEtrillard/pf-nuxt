@@ -12,7 +12,7 @@
       >
         <div :class="$style.contentWrapper">
           <div v-if="work.logo" :class="$style.imgWrapper">
-            <img
+            <nuxt-img
               :class="$style.img"
               :src="work.logo.data.full_url"
               :alt="work.title"

@@ -1,7 +1,7 @@
 <template>
   <section :class="[$style.root, $style.fullscreen]" appAppear>
     <!-- <picture appParallaxCover [config]="{scrollerSelector: 'app-root'}"> -->
-    <picture appParallaxCover>
+    <!-- <picture appParallaxCover>
       <source
         srcset="~/assets/images/809-1080.jpg"
         :media="`(max-width: ${xSmallRes}) and (max-height: ${smallRes})`"
@@ -19,8 +19,8 @@
         :media="`(max-width: ${largeRes})`"
       />
       <source srcset="~/assets/images/3440-1440.jpg" />
-      <img src="~/assets/images/809-1080.jpg" alt="yah" />
-    </picture>
+    </picture> -->
+    <nuxt-img src="~/assets/images/3440-1440.jpg" alt="yah" />
   </section>
 </template>
 

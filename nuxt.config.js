@@ -61,7 +61,8 @@ export default {
   buildModules: [
     '@nuxt/typescript-build',
     // Doc: https://github.com/nuxt-community/stylelint-module
-    '@nuxtjs/stylelint-module'
+    '@nuxtjs/stylelint-module',
+    '@nuxt/image'
   ],
   /*
    ** Nuxt.js modules
@@ -73,6 +74,10 @@ export default {
   ],
   styleResources: {
     scss: ['~/assets/scss/conf.scss']
+  },
+
+  image: {
+    domains: ['api.youen-etrillard.com']
   },
   /*
    ** Axios module configuration
