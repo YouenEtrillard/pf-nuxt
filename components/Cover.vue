@@ -1,36 +1,33 @@
 <template>
   <section :class="[$style.root, $style.fullscreen]" appAppear>
     <!-- <picture appParallaxCover [config]="{scrollerSelector: 'app-root'}"> -->
-    <picture appParallaxCover>
+    <picture>
       <source
-        srcset="~/assets/images/809-1080.jpg"
+        :srcset="`${getResizedImage(`809-1080.jpg`)}`"
         :media="`(max-width: ${xSmallRes}) and (max-height: ${smallRes})`"
       />
       <source
-        srcset="~/assets/images/1080-1441.jpg"
+        :srcset="`${getResizedImage(`1080-1441.jpg`)}`"
         :media="`(max-width: ${smallRes}) and (max-height: ${mediumRes})`"
       />
       <source
-        srcset="~/assets/images/1200-675.jpg"
+        :srcset="`${getResizedImage(`1200-675.jpg`)}`"
         :media="`(max-width: ${mediumRes}) and (orientation: landscape)`"
       />
       <source
-        srcset="~/assets/images/1920-1080.jpg"
+        :srcset="`${getResizedImage(`1920-1080.jpg`)}`"
         :media="`(max-width: ${largeRes})`"
       />
-      <source srcset="~/assets/images/3440-1440.jpg" />
-      <nuxt-img
-        src="3440-1440.jpg"
+      <img
+        :src="`${getResizedImage(`3440-1440.jpg`)}`"
         alt="Decent portrait of Youen wearing a textured blue shirt"
       />
     </picture>
   </section>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
-
-export default Vue.extend({
+<script>
+export default {
   data() {
     return {
       xSmallRes: '800px',
@@ -39,8 +36,13 @@ export default Vue.extend({
       largeRes: '2070px',
       xLargeRes: '3590px'
     };
+  },
+  methods: {
+    getResizedImage(path) {
+      return this.$img(path);
+    }
   }
-});
+};
 </script>
 
 <style lang="scss" module>
