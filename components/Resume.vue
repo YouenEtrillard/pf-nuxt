@@ -6,12 +6,12 @@
         <li
           v-for="(xp, index) in experience"
           :key="index"
-          :class="$style.xpItem"
+          :class="$style.experienceItem"
         >
           <div>
             <p v-if="xp.company && xp.company !== ''">{{ xp.company }}</p>
             <p v-if="xp.dates && xp.dates !== ''">{{ xp.dates }}</p>
-            <p v-if="xp.role && xp.role !== ''" :class="$style.xpTitle">
+            <p v-if="xp.role && xp.role !== ''" :class="$style.experienceTitle">
               {{ xp.role }}
             </p>
           </div>
