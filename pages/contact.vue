@@ -24,12 +24,13 @@ export default {};
 
 <style module lang="scss">
 .contactMeans {
-  margin: 0;
+  align-items: center;
   display: flex;
-  justify-content: space-around;
-  width: 100%;
-  max-width: 80rem;
   flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 80rem;
+  width: 100%;
 
   li {
     list-style-type: none;

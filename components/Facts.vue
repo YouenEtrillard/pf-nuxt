@@ -13,6 +13,7 @@
               :class="$style.factImg"
               :src="`unsplash${fact.image.data.url}`"
               :alt="fact.picture_alt"
+              :title="fact.picture_alt"
             />
           </a>
           <template v-else>
@@ -21,6 +22,7 @@
               :class="$style.factImg"
               :src="`unsplash${fact.image.data.url}`"
               :alt="fact.picture_alt"
+              :title="fact.picture_alt"
             />
           </template>
           <p v-if="fact.credit && fact.credit !== ''" :class="$style.credit">
