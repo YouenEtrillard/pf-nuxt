@@ -61,7 +61,7 @@
 import { mapGetters } from 'vuex';
 
 export default {
-  async asyncData({ params, $axios, payload, store }) {
+  async asyncData({ params, payload, store }) {
     let work;
     const url = params.url;
     const workByUrl = store.getters.workByUrl(url);
@@ -73,12 +73,9 @@ export default {
       console.log('getting work', url, 'from store');
       work = workByUrl;
     } else {
-      console.log('hitting the API for the work', url);
-      work = (
-        await $axios.$get(
-          `https://api.youen-etrillard.com/directus/public/_/items/works?fields=*.*.*`
-        )
-      ).data.find((work) => work.url === params.url);
+      console.log('hitting the API to get work :', url);
+      await store.dispatch(`fetchResource`, 'works');
+      work = store.getters.workByUrl(url);
     }
     return { work };
   },
