@@ -1,31 +1,31 @@
 <template>
   <main :class="$style.root">
-    <Cover />
+    <CoverImage />
     <div class="wrapper">
-      <Resume
+      <MyResume
         :education="education"
         :experience="experience"
         :skills="skills"
       />
-      <Intro />
-      <Facts />
+      <IntroMyself />
+      <FactList />
     </div>
   </main>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import Cover from '~/components/Cover.vue';
-import Facts from '~/components/Facts.vue';
-import Intro from '~/components/Intro.vue';
-import Resume from '~/components/Resume.vue';
+import CoverImage from '~/components/CoverImage.vue';
+import FactList from '~/components/FactList.vue';
+import IntroMyself from '~/components/IntroMyself.vue';
+import MyResume from '~/components/MyResume.vue';
 
 export default Vue.extend({
   components: {
-    Cover,
-    Facts,
-    Intro,
-    Resume
+    CoverImage,
+    FactList,
+    IntroMyself,
+    MyResume
   },
   data() {
     return {

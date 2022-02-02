@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.root">
     <CustomIcon />
-    <Sidebar />
+    <SidebarElem />
     <nuxt />
   </div>
 </template>
@@ -9,12 +9,12 @@
 <script lang="ts">
 import Vue from 'vue';
 import CustomIcon from '~/components/CustomIcon.vue';
-import Sidebar from '~/components/Sidebar.vue';
+import SidebarElem from '~/components/SidebarElem.vue';
 
 export default Vue.extend({
   components: {
     CustomIcon,
-    Sidebar
+    SidebarElem
   }
 });
 </script>

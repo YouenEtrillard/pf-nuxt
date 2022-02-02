@@ -17,7 +17,7 @@
       </section>
       <section :class="$style.logoShowcase">
         <div :class="$style.logoWrapper">
-          <logo />
+          <LogoAnim />
         </div>
       </section>
       <div :class="$style.logoBackground">
@@ -30,12 +30,12 @@
 <script lang="ts">
 import Vue from 'vue';
 import CustomIcon from '~/components/CustomIcon.vue';
-import Logo from '~/components/Logo.vue';
+import LogoAnim from '~/components/LogoAnim.vue';
 
 export default Vue.extend({
   components: {
     CustomIcon,
-    Logo
+    LogoAnim
   }
 });
 </script>
