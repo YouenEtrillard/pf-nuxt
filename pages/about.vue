@@ -28,10 +28,10 @@ export default Vue.extend({
     IntroMyself,
     MyResume
   },
-  async fetch({ store }) {
-    await store.dispatch(`fetchResource`, 'education');
-    await store.dispatch(`fetchResource`, 'experience');
-    await store.dispatch(`fetchResource`, 'skills');
+  async fetch() {
+    await this.$store.dispatch(`fetchResource`, 'education');
+    await this.$store.dispatch(`fetchResource`, 'experience');
+    await this.$store.dispatch(`fetchResource`, 'skills');
   },
   computed: {
     ...mapGetters(['education', 'experience', 'skills'])
