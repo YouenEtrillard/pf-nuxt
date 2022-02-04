@@ -1,7 +1,6 @@
 <template>
   <section>
-    <h1>ALLEZ</h1>
-    <ul :class="$style.factList">
+    <ul v-if="facts.length" :class="$style.factList">
       <li v-for="(fact, index) in facts" :key="index" :class="$style.factItem">
         <div :class="$style.factImgWrapper">
           <a
@@ -38,6 +37,10 @@
         </div>
       </li>
     </ul>
+    <p v-else>
+      ☕ Facts are loading, please take this moment to stretch your back or do
+      whatever you wish. 🧘‍♀️
+    </p>
   </section>
 </template>
 
@@ -89,6 +92,7 @@ export default {
       text-align: center;
 
       > a {
+        display: block;
         height: auto;
         outline-offset: var(--outline-offset-content);
         outline-width: var(--outline-width-content);

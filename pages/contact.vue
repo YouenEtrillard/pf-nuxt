@@ -1,7 +1,14 @@
 <template>
   <ul :class="$style.contactMeans" class="content">
     <li>
-      <p><a target="_blank" href="./cv-youen-etrillard.pdf">Resume</a></p>
+      <p>
+        <a
+          target="_blank"
+          title="Link to my resume"
+          href="./cv-youen-etrillard.pdf"
+          >Resume</a
+        >
+      </p>
     </li>
     <li>
       <p>contact (at) youen-etrillard.com</p>
@@ -11,6 +18,7 @@
         <a
           target="_blank"
           href="https://www.linkedin.com/in/youen-etrillard-12265883/"
+          title="Link to my linkedin profile"
           >Linkedin</a
         >
       </p>

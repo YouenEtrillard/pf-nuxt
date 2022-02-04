@@ -53,33 +53,6 @@
         </li>
       </ul>
     </section>
-    <section>
-      <ul :class="$style.contactMeans" class="content">
-        <li>
-          <p>
-            <a
-              target="_blank"
-              href="./cv-youen-etrillard.pdf"
-              title="Link to my résumé"
-              >Résumé</a
-            >
-          </p>
-        </li>
-        <li>
-          <p>contact@youen-etrillard.com</p>
-        </li>
-        <li>
-          <p>
-            <a
-              target="_blank"
-              href="https://www.linkedin.com/in/youen-etrillard-12265883/"
-              title="Link to my linkedin profile"
-              >Linkedin</a
-            >
-          </p>
-        </li>
-      </ul>
-    </section>
   </section>
 </template>
 
