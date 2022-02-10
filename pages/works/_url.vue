@@ -1,5 +1,5 @@
 <template>
-  <main :class="$style.root" appAppear>
+  <main :class="$style.root" class="wrapper">
     <template v-if="work">
       <h1 v-if="work.title" :class="$style.title">
         {{ work.title }}
@@ -40,11 +40,7 @@
         </div>
       </div>
 
-      <div
-        v-if="work.details"
-        :class="$style.content"
-        v-html="work.details"
-      ></div>
+      <div v-if="work.details" class="content" v-html="work.details"></div>
 
       <div v-if="work.pictures" :class="$style.gallery">
         <nuxt-img
@@ -135,7 +131,7 @@ export default {
   }
 }
 
-.text {
+.bannerText {
   display: flex;
   flex-direction: column;
   justify-content: center;
