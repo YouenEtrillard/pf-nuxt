@@ -1,23 +1,5 @@
 <template>
   <section :class="$style.root">
-    <section :class="$style.experience">
-      <h2>Experience</h2>
-      <ul>
-        <li
-          v-for="(xp, index) in experience"
-          :key="index"
-          :class="$style.experienceItem"
-        >
-          <div>
-            <p v-if="xp.company && xp.company !== ''">{{ xp.company }}</p>
-            <p v-if="xp.dates && xp.dates !== ''">{{ xp.dates }}</p>
-            <p v-if="xp.role && xp.role !== ''" :class="$style.experienceTitle">
-              {{ xp.role }}
-            </p>
-          </div>
-        </li>
-      </ul>
-    </section>
     <section :class="$style.skills">
       <h2>Some skills</h2>
       <ul>
@@ -53,6 +35,25 @@
         </li>
       </ul>
     </section>
+    <section :class="$style.experience">
+      <h2>Experience</h2>
+      <ul>
+        <li
+          v-for="(xp, index) in experience"
+          :key="index"
+          :class="$style.experienceItem"
+        >
+          <div>
+            <p v-if="xp.company && xp.company !== ''">{{ xp.company }}</p>
+            <p v-if="xp.dates && xp.dates !== ''">{{ xp.dates }}</p>
+            <p v-if="xp.role && xp.role !== ''" :class="$style.experienceTitle">
+              {{ xp.role }}
+            </p>
+            <p v-if="xp.details" class="content" v-html="xp.details"></p>
+          </div>
+        </li>
+      </ul>
+    </section>
   </section>
 </template>
 
@@ -79,18 +80,16 @@ export default Vue.extend({
 
 <style lang="scss" module>
 .root {
+  display: flex;
+  flex-wrap: wrap;
   padding: var(--padding-top) 0;
-  display: grid;
-  grid-gap: 2vw;
-  grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
 
-  section {
+  section:not(:last-child) {
     margin-bottom: 4rem;
   }
 
   h2 {
     text-transform: uppercase;
-    font-size: 1.4rem;
     font-weight: 600;
   }
 
@@ -108,12 +107,16 @@ export default Vue.extend({
   }
 }
 
-.experience {
-  grid-row-start: span 2;
+.education {
 }
 
-.experience,
+.experience {
+  width: 100%;
+}
+
 .education {
+  width: calc(100% / 3);
+
   &Item {
     &:not(:first-child) {
       margin-top: 3.5rem;
@@ -127,6 +130,7 @@ export default Vue.extend({
 }
 
 .skills {
+  width: calc(100% / 1.5);
   ul {
     columns: 2;
     column-gap: 4rem;
@@ -134,13 +138,6 @@ export default Vue.extend({
 
   p {
     display: inline-block;
-  }
-}
-
-.contactMeans {
-  li {
-    list-style-type: none;
-    margin: 0.2em 1rem;
   }
 }
 </style>
