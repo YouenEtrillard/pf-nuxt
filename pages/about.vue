@@ -1,14 +1,14 @@
 <template>
   <main :class="$style.root">
     <CoverImage />
-    <div class="wrapper">
+    <div :class="$style.content" class="wrapper">
+      <IntroMyself />
+      <FactList />
       <MyResume
         :education="education"
         :experience="experience"
         :skills="skills"
       />
-      <IntroMyself />
-      <FactList />
     </div>
   </main>
 </template>
@@ -42,5 +42,9 @@ export default Vue.extend({
 <style lang="scss" module>
 .root {
   max-width: 100%;
+}
+
+.content {
+  margin-top: 5rem;
 }
 </style>
