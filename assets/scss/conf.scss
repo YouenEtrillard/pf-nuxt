@@ -28,25 +28,30 @@ $smallPhone: 360px;
   --main-bg: #252627;
   --sidebar-bg: #121313;
   --main-color: #048b9a;
-  --second-color: #E6CC12;
-  --third-color: #9A4404;
+  --second-color: #e6cc12;
+  --third-color: #9a4404;
   --text-color-light: white;
   --font-title: 'Quicksand', sans-serif;
   --font-text: 'Raleway', sans-serif;
   --wrapper-width: 120rem;
-  --fz-h1: calc(3rem + 1.1vw);
-  --fz-subtitle: calc(2rem + .1vw);
-  --fz-button: calc(2.2rem + .2vw);
+  --fz-h1: calc(3rem + 0.6vw);
+  --fz-h2: calc(2.4rem + 0.1vw);
+  --fz-subtitle: calc(2rem + 0.1vw);
+  --fz-button: calc(2.2rem + 0.2vw);
   --outline-offset-content: 2px;
   --outline-width-content: 2px;
 }
 
-@mixin breakpoint($point: null, $type:down width) {
+@mixin breakpoint($point: null, $type: down width) {
   @if ($point != null) {
     $whichProp: 'width';
 
-    @if (length($type) > 1 and (nth($type, 1) == 'height' or nth($type, 2) == 'height' )) {
-        $whichProp: 'height';
+    @if (
+      length($type) >
+        1 and
+        (nth($type, 1) == 'height' or nth($type, 2) == 'height')
+    ) {
+      $whichProp: 'height';
     }
 
     @if (length($point) > 1) {
@@ -58,7 +63,7 @@ $smallPhone: 360px;
         $minPoint: nth($point, 2);
       }
 
-      $finalMinPoint: $minPoint+1;
+      $finalMinPoint: $minPoint + 1;
       $finalMaxPoint: $maxPoint;
 
       @if (nth($type, 1) == 'up' or nth($type, 2) == 'up') {
@@ -66,27 +71,29 @@ $smallPhone: 360px;
         $finalMaxPoint: $maxPoint - 1;
       }
 
-      @media (min-#{$whichProp}: #{$finalMinPoint}) and (max-#{$whichProp}: #{$finalMaxPoint}) { @content; }
-
+      @media (min-#{$whichProp}: #{$finalMinPoint}) and (max-#{$whichProp}: #{$finalMaxPoint}) {
+        @content;
+      }
     } @else {
       $finalPoint: $point;
       $finalType: 'max-#{$whichProp}';
 
       @if (length($type) > 1) {
         @if (nth($type, 1) == 'up' or nth($type, 2) == 'up') {
-          $finalPoint: $point+1;
+          $finalPoint: $point + 1;
           $finalType: 'min-#{$whichProp}';
         }
       } @else {
         @if (nth($type, 1) == 'up') {
-          $finalPoint: $point+1;
+          $finalPoint: $point + 1;
           $finalType: 'min-#{$whichProp}';
         }
       }
 
-      @media ($finalType: #{$finalPoint}) { @content; }
+      @media ($finalType: #{$finalPoint}) {
+        @content;
+      }
     }
-
   } @else {
     @warn "Unfortunately, value from first parameter : `#{$point}` - is not a valid one. "
       + "Please use valid value.";
