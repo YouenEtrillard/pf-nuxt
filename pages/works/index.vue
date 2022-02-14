@@ -3,6 +3,13 @@
     <!-- <section class="intro">
       <h1>Works</h1>
     </section> -->
+    <p>
+      This is a bit outdated content since all of it highlights things I did
+      when I worked at Cognix Systems (+ the angular version of my portfolio).
+      But I liked how I used Nuxt asyncData and generate routes to have each
+      page generated on the server side from the "works" endpoint, so I'm
+      keeping it for now !
+    </p>
     <ul :class="$style.list">
       <li
         v-for="(work, workIndex) in works"
@@ -74,6 +81,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 
   .list {
     padding: 0;
