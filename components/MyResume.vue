@@ -20,18 +20,16 @@
           :key="index"
           :class="$style.educationItem"
         >
-          <div>
-            <p v-if="educ.dates && educ.dates !== ''">{{ educ.dates }}</p>
-            <p v-if="educ.institute && educ.institute !== ''">
-              {{ educ.institute }}
-            </p>
-            <p
-              v-if="educ.degree && educ.degree !== ''"
-              :class="$style.educationTitle"
-            >
-              {{ educ.degree }}
-            </p>
-          </div>
+          <p v-if="educ.dates && educ.dates !== ''">{{ educ.dates }}</p>
+          <p v-if="educ.institute && educ.institute !== ''">
+            {{ educ.institute }}
+          </p>
+          <p
+            v-if="educ.degree && educ.degree !== ''"
+            :class="$style.educationTitle"
+          >
+            {{ educ.degree }}
+          </p>
         </li>
       </ul>
     </section>
@@ -43,14 +41,10 @@
           :key="index"
           :class="$style.experienceItem"
         >
-          <div>
-            <p v-if="xp.company && xp.company !== ''">{{ xp.company }}</p>
-            <p v-if="xp.dates && xp.dates !== ''">{{ xp.dates }}</p>
-            <p v-if="xp.role && xp.role !== ''" :class="$style.experienceTitle">
-              {{ xp.role }}
-            </p>
-            <p v-if="xp.details" class="content" v-html="xp.details"></p>
-          </div>
+          <p :class="$style.experienceTitle">
+            {{ xp.company }} - {{ xp.dates }} - {{ xp.role }}
+          </p>
+          <div v-if="xp.details" class="content" v-html="xp.details"></div>
         </li>
       </ul>
     </section>
@@ -89,8 +83,8 @@ export default Vue.extend({
   }
 
   h2 {
+    color: var(--main-color);
     text-transform: uppercase;
-    font-weight: 600;
   }
 
   p {
@@ -107,11 +101,20 @@ export default Vue.extend({
   }
 }
 
-.education {
-}
-
 .experience {
   width: 100%;
+
+  &Item {
+    &:not(:first-child) {
+      margin-top: 4.8rem;
+    }
+  }
+
+  .experienceTitle {
+    font-size: var(--fz-subtitle);
+    font-weight: 600;
+    margin: 2rem 0;
+  }
 }
 
 .education {
@@ -119,7 +122,7 @@ export default Vue.extend({
 
   &Item {
     &:not(:first-child) {
-      margin-top: 3.5rem;
+      margin-top: 3.6rem;
     }
   }
 

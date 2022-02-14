@@ -1,6 +1,6 @@
 <template>
-  <main :class="$style.root">
-    <h2>If you want to get in touch !</h2>
+  <main :class="$style.root" class="wrapper">
+    <p :class="$style.text">{{ contact[0].content }}</p>
 
     <ul :class="$style.contactMeans" class="content">
       <li>
@@ -31,7 +31,16 @@
 </template>
 
 <script>
-export default {};
+import { mapGetters } from 'vuex';
+
+export default {
+  async fetch() {
+    await this.$store.dispatch(`fetchResource`, 'contact');
+  },
+  computed: {
+    ...mapGetters([`contact`])
+  }
+};
 </script>
 
 <style module lang="scss">
@@ -40,10 +49,11 @@ export default {};
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0;
-  min-height: 100vh;
-  padding: 0;
-  width: 100%;
+}
+
+.text {
+  font-size: var(--fz-subtitle);
+  text-align: center;
 }
 
 .contactMeans {

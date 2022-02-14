@@ -1,6 +1,7 @@
 const defaultDepth = `*.*.*`;
 
 export const state = () => ({
+  contact: [],
   education: [],
   experience: [],
   facts: [],
@@ -9,6 +10,7 @@ export const state = () => ({
 });
 
 export const getters = {
+  contact: (state) => state.contact,
   education: (state) => state.education,
   experience: (state) => state.experience,
   facts: (state) => state.facts,
