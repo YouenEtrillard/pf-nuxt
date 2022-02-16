@@ -1,25 +1,50 @@
 <template>
-  <svg class="logo animate synched" viewBox="0 0 439.43 531.84">
+  <svg
+    :class="[
+      $style.logo,
+      {
+        [$style.animate]: addAnimate,
+        [$style.synched]: syncAnimations
+      }
+    ]"
+    viewBox="0 0 439.43 531.84"
+  >
     <title>logo</title>
     <path
-      class="shape-top"
+      :class="$style.shapeTop"
       d="M 40.72 72.95 l 179.03 126.6 179.88-127.1 L 219.74.54 40.72 72.95 z"
     ></path>
     <path
-      class="shape-left"
+      :class="$style.shapeLeft"
       d="M 1.22 108.95 l 189.5 135.59-.31 284.96 L 1.22 108.95"
     ></path>
     <path
-      class="shape-right"
+      :class="$style.shapeRight"
       d="M 248.78 244.58 l 189.44-135.63-189.44 420.57 V 244.58 z"
     ></path>
   </svg>
 </template>
-<style scoped>
+
+<script>
+export default {
+  data() {
+    return {
+      addAnimate: false,
+      syncAnimations: true
+    };
+  },
+  mounted() {
+    this.addAnimate = true;
+  }
+};
+</script>
+<style module lang="scss">
 .logo {
+  /* max-width: 50vw;
+  max-height: 50vh; */
+  --bg: transparent;
+  --leBlue: var(--main-color);
   fill: var(--leBlue);
-  max-width: 50vw;
-  max-height: 50vh;
 }
 
 @keyframes top {
@@ -99,30 +124,30 @@
 .animate {
   --duration: 2.5s;
   --delay: 0.35s;
+
+  .shapeTop {
+    animation: top var(--duration) linear;
+    animation-fill-mode: forwards;
+  }
+
+  .shapeLeft {
+    --self-delay: var(--delay);
+    --self-duration: calc(var(--duration) - var(--self-delay));
+    animation: left var(--self-duration) linear var(--self-delay);
+    animation-fill-mode: both;
+    stroke-dashoffset: -234px;
+  }
+
+  .shapeRight {
+    --self-delay: calc(var(--delay) * 2);
+    --self-duration: calc(var(--duration) - var(--self-delay));
+    stroke-dasharray: 979px;
+    animation: right var(--self-duration) linear var(--self-delay);
+    animation-fill-mode: both;
+  }
 }
 
 .synched {
   --delay: 0s;
-}
-
-.animate .shape-top {
-  animation: top var(--duration) linear;
-  animation-fill-mode: forwards;
-}
-
-.animate .shape-left {
-  --self-delay: var(--delay);
-  --self-duration: calc(var(--duration) - var(--self-delay));
-  animation: left var(--self-duration) linear var(--self-delay);
-  animation-fill-mode: both;
-  stroke-dashoffset: -234px;
-}
-
-.animate .shape-right {
-  --self-delay: calc(var(--delay) * 2);
-  --self-duration: calc(var(--duration) - var(--self-delay));
-  stroke-dasharray: 979px;
-  animation: right var(--self-duration) linear var(--self-delay);
-  animation-fill-mode: both;
 }
 </style>

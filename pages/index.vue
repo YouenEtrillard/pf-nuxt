@@ -69,13 +69,14 @@ export default Vue.extend({
 }
 
 .logoShowcase {
-  width: 45rem;
-  position: absolute;
   bottom: 50%;
+  pointer-events: none;
+  position: absolute;
   right: 25%;
-  z-index: 1;
   transform: translateX(50%) translateY(50%);
   transition: opacity 0.25s ease-out;
+  width: 45rem;
+  z-index: 1;
 
   &::before {
     content: '';
@@ -88,9 +89,9 @@ export default Vue.extend({
     fill: $main-color;
   }
 
-  @include breakpoint($smallTablet) {
-    opacity: 0.2;
-  }
+  // @include breakpoint($smallTablet) {
+  //   opacity: 0.2;
+  // }
 }
 
 .logoWrapper {
@@ -104,6 +105,7 @@ export default Vue.extend({
 .introduction {
   color: var(--text-color-light);
   flex: 50% 0 0;
+  position: relative;
   z-index: 10;
 
   @include breakpoint($smallTablet) {

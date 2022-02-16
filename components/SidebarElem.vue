@@ -13,7 +13,7 @@
             title="Go to About page"
             :class="$style.navLink"
           >
-            <div class="iconWrapper">
+            <div :class="$style.iconWrapper">
               <CustomIcon icon="who-am-i" />
             </div>
             <span>About</span>
@@ -25,7 +25,7 @@
             title="Go to Works page"
             :class="$style.navLink"
           >
-            <div class="iconWrapper">
+            <div :class="$style.iconWrapper">
               <CustomIcon icon="works" />
             </div>
             <span>Works</span>
@@ -37,7 +37,7 @@
             title="Go to Contact page"
             :class="$style.navLink"
           >
-            <div class="iconWrapper">
+            <div :class="$style.iconWrapper">
               <CustomIcon icon="speech-bubbles" />
             </div>
             <span>Contact</span>
