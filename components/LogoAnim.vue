@@ -42,82 +42,88 @@ export default {
 .logo {
   /* max-width: 50vw;
   max-height: 50vh; */
+  fill: transparent;
+  stroke: transparent;
   --bg: transparent;
-  --leBlue: var(--main-color);
-  fill: var(--leBlue);
+  --filling-color: var(--main-color);
+  --stroke-color: var(--main-color);
+
+  @include breakpoint($smallTablet) {
+    --filling-color: rgba(0, 0, 0, 0.3);
+  }
 }
 
 @keyframes top {
   0% {
     fill: var(--bg);
-    stroke: var(--leBlue);
+    stroke: var(--stroke-color);
     stroke-dasharray: 0 832;
     stroke-dashoffset: 198;
   }
 
   75% {
     fill: var(--bg);
-    stroke: var(--leBlue);
+    stroke: var(--stroke-color);
     stroke-dasharray: 832 0;
     stroke-dashoffset: 612;
   }
 
   80% {
     fill: var(--bg);
-    stroke: var(--leBlue);
+    stroke: var(--stroke-color);
   }
 
   100% {
-    fill: var(--leBlue);
-    stroke: var(--leBlue);
+    fill: var(--filling-color);
+    stroke: var(--stroke-color);
   }
 }
 
 @keyframes left {
   0% {
     fill: var(--bg);
-    stroke: var(--leBlue);
+    stroke: var(--stroke-color);
     stroke-dasharray: 0 979;
   }
 
   75% {
     fill: var(--bg);
-    stroke: var(--leBlue);
+    stroke: var(--stroke-color);
     stroke-dasharray: 979 0;
   }
 
   80% {
     fill: var(--bg);
-    stroke: var(--leBlue);
+    stroke: var(--stroke-color);
   }
 
   100% {
-    fill: var(--leBlue);
-    stroke: var(--leBlue);
+    fill: var(--filling-color);
+    stroke: var(--stroke-color);
   }
 }
 
 @keyframes right {
   0% {
     fill: var(--bg);
-    stroke: var(--leBlue);
+    stroke: var(--stroke-color);
     stroke-dashoffset: -979px;
   }
 
   75% {
     fill: var(--bg);
-    stroke: var(--leBlue);
+    stroke: var(--stroke-color);
     stroke-dashoffset: 0;
   }
 
   80% {
     fill: var(--bg);
-    stroke: var(--leBlue);
+    stroke: var(--stroke-color);
   }
 
   100% {
-    fill: var(--leBlue);
-    stroke: var(--leBlue);
+    fill: var(--filling-color);
+    stroke: var(--stroke-color);
   }
 }
 
