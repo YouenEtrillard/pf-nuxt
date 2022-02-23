@@ -67,8 +67,8 @@
 import { mapGetters } from 'vuex';
 
 export default {
-  async fetch({ store }) {
-    await store.dispatch(`fetchResource`, 'works');
+  async fetch() {
+    await this.$store.dispatch(`fetchResource`, 'skills');
   },
   computed: {
     ...mapGetters([`works`])
