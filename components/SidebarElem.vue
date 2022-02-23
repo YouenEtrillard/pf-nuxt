@@ -49,7 +49,7 @@
   </aside>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue';
 import CustomIcon from '~/components/CustomIcon.vue';
 

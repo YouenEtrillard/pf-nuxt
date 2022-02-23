@@ -27,7 +27,7 @@
   </main>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue';
 import CustomIcon from '~/components/CustomIcon.vue';
 import LogoAnim from '~/components/LogoAnim.vue';
