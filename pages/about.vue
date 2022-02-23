@@ -13,7 +13,7 @@
   </main>
 </template>
 
-<script lang="ts">
+<script>
 import { mapGetters } from 'vuex';
 import Vue from 'vue';
 import CoverImage from '~/components/CoverImage.vue';

@@ -39,7 +39,7 @@ export default {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css?family=Quicksand:300,400,600|Raleway:400,600'
+          'https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600|Raleway:400,500,600'
       }
     ]
   },
