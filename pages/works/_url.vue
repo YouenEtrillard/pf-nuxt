@@ -145,4 +145,18 @@ export default {
   text-transform: capitalize;
   color: var(--main-color);
 }
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.4rem;
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
 </style>
