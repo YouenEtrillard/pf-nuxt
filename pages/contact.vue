@@ -7,6 +7,16 @@
         <p>
           <a
             target="_blank"
+            title="Link to my github"
+            href="https://github.com/YouenEtrillard"
+            >Github</a
+          >
+        </p>
+      </li>
+      <li>
+        <p>
+          <a
+            target="_blank"
             title="Link to my resume"
             href="./cv-youen-etrillard.pdf"
             >Resume</a
