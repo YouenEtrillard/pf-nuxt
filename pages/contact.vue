@@ -1,6 +1,10 @@
 <template>
   <main :class="$style.root" class="wrapper">
-    <div :class="$style.text" v-html="contact[0].markup_content"></div>
+    <div
+      :class="$style.text"
+      class="content"
+      v-html="contact[0].markup_content"
+    ></div>
 
     <ul :class="$style.contactMeans" class="content">
       <li>
