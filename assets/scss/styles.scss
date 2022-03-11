@@ -68,7 +68,7 @@ ul {
     outline-offset: var(--outline-offset-content);
     outline-width: var(--outline-width-content);
 
-    &:hover {
+    &:hover, &:focus {
       background: var(--hover-color);
     }
   }
