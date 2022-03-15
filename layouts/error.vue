@@ -5,21 +5,21 @@
     <nuxt-img
       v-if="!showGif"
       :class="$style.img"
-      src="/404/travolta.gif"
+      src="travolta.gif"
       alt="confused travolta from pulp fiction"
       @click.native="showGif = true"
     />
     <nuxt-img
       v-show="showGif"
       :class="$style.img"
-      src="/404/travolta.gif"
+      src="travolta.gif"
       alt="confused travolta from pulp fiction"
       :modifiers="{ animated: true }"
       @load.native="onGifLoad"
       @click.native="showGif = false"
     />
     <p :class="$style.text">
-      It seem you landed on a page where there is nothing to see, you can go to
+      It seems you landed on a page where there is nothing to see, you can go to
       the <NuxtLink to="/">Home page</NuxtLink> or let me know if you think
       there should be some content there
     </p>
