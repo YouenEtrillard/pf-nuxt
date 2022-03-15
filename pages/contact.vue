@@ -30,7 +30,4 @@ export default {
   font-size: var(--fz-subtitle);
   text-align: center;
 }
-
-.text {
-}
 </style>

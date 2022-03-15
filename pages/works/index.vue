@@ -97,6 +97,21 @@ export default {
     }
   }
 
+  .linkWrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.25s ease-out;
+  }
+
   .item {
     --thickness: 1px;
     --text-color: rgba(255, 255, 255, 0.5);
@@ -140,31 +155,16 @@ export default {
       background: var(--hover-color);
       color: white;
     }
+  }
 
-    &Wrapper {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      padding: var(--padding);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      opacity: 0;
-      z-index: 2;
-      transition: opacity 0.25s ease-out;
+  .shortdescWrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
 
-      .shortdesc {
-        color: var(--main-bg);
-
-        &Wrapper {
-          flex-grow: 1;
-          display: flex;
-          align-items: center;
-        }
-      }
-    }
+  .shortdesc {
+    color: var(--main-bg);
   }
 
   .contentWrapper {
@@ -175,18 +175,18 @@ export default {
     height: 100%;
   }
 
+  .imgWrapper {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+  }
+
   .img {
     max-width: 75%;
     max-height: 20rem;
-
-    &Wrapper {
-      flex-grow: 1;
-      width: 100%;
-      display: flex;
-      align-content: center;
-      align-items: center;
-      justify-content: center;
-    }
   }
 }
 </style>

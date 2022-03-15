@@ -192,24 +192,21 @@ export default Vue.extend({
 }
 
 .navLink {
-  display: block;
+  align-items: center;
   color: white;
+  display: flex;
   fill: currentColor;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
   opacity: 0.7;
+  outline-offset: -2px;
   position: relative;
+  text-decoration: none;
   transition: all 0.25s ease-out;
   transition-property: color, opacity;
   width: 100%;
-  height: 100%;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  transition: all 0.25s ease-out;
-  transition-property: color, opacity;
   will-change: opacity;
-  outline-offset: -2px;
 
   &:hover {
     opacity: 1;

@@ -137,7 +137,6 @@ export default {
   justify-content: center;
   font-size: 2rem;
   align-items: center;
-  justify-content: center;
 }
 
 .tags {

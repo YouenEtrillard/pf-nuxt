@@ -3,20 +3,20 @@
     <h1 v-if="error.statusCode === 404">Where is the content ?</h1>
     <h1 v-else>An error occurred - {{ error.statusCode }}</h1>
     <nuxt-img
-      :class="$style.img"
       v-if="!showGif"
-      @click.native="showGif = true"
+      :class="$style.img"
       src="/404/travolta.gif"
       alt="confused travolta from pulp fiction"
+      @click.native="showGif = true"
     />
     <nuxt-img
-      :class="$style.img"
       v-show="showGif"
-      @load.native="onGifLoad"
-      @click.native="showGif = false"
+      :class="$style.img"
       src="/404/travolta.gif"
       alt="confused travolta from pulp fiction"
       :modifiers="{ animated: true }"
+      @load.native="onGifLoad"
+      @click.native="showGif = false"
     />
     <p :class="$style.text">
       It seem you landed on a page where there is nothing to see, you can go to
