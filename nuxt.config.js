@@ -107,7 +107,8 @@ export default {
               };
             });
         });
-    }
+    },
+    fallback: true
   },
   /*
    ** Build configuration
