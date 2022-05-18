@@ -1,7 +1,7 @@
 <template>
   <section :class="$style.root">
     <section :class="$style.skills">
-      <h2>Some skills</h2>
+      <h2 id="skills">Some skills</h2>
       <ul>
         <li
           v-for="(skill, index) in skills"
@@ -13,7 +13,7 @@
       </ul>
     </section>
     <section :class="$style.education">
-      <h2>Education</h2>
+      <h2 id="education">Education</h2>
       <ul>
         <li
           v-for="(educ, index) in education"
@@ -34,7 +34,7 @@
       </ul>
     </section>
     <section :class="$style.experience">
-      <h2>Experience</h2>
+      <h2 id="experience">Experience</h2>
       <ul>
         <li
           v-for="(xp, index) in experience"
@@ -134,6 +134,7 @@ export default Vue.extend({
 
 .skills {
   width: calc(100% / 1.5);
+
   ul {
     columns: 2;
     column-gap: 4rem;
@@ -141,6 +142,13 @@ export default Vue.extend({
 
   p {
     display: inline-block;
+  }
+}
+
+.education,
+.skills {
+  @include breakpoint($phone) {
+    width: 100%;
   }
 }
 </style>
