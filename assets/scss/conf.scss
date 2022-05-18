@@ -1,11 +1,3 @@
-$main-bg: #252627;
-$sidebar-bg: #121313;
-$main-color: #048b9a;
-$text-color-light: white;
-
-$fontTitle: "Quicksand", sans-serif;
-$fontText: "Raleway", sans-serif;
-
 $bigDesktop: 1800px;
 $desktop: 1600px;
 $smallDesktop: 1400px;
@@ -20,17 +12,18 @@ $smallPhone: 360px;
   --sidebar-width: 10rem;
   --sidebar-height: calc(4vh + 4rem);
   --padding-top: 10vh;
-  --overlay-light: $main-bg;
-  --overlay-dark: $main-bg;
-  --surface: $main-bg;
-  --base: $main-bg;
-  --overflow: $main-bg;
-  --main-bg: #252627;
-  --sidebar-bg: #121313;
+  --main-bg: hsl(210, 3%, 15%);
+  --sidebar-bg: hsl(180, 3%, 7%);
   --main-color: #048b9a;
-  --second-color: #e6cc12;
-  --third-color: #9a4404;
-  --text-color-light: white;
+  --main-color: hsl(186, 95%, 31%);
+  --second-color: hsl(53, 85%, 49%);
+  --third-color: hsl(26, 95%, 31%);
+  --text-color-light: hsl(0, 0%, 100%);
+  --overlay-light: var(--main-bg);
+  --overlay-dark: var(--main-bg);
+  --surface: var(--main-bg);
+  --base: var(--main-bg);
+  --overflow: var(--main-bg);
   --font-title: "Quicksand", sans-serif;
   --font-text: "Raleway", sans-serif;
   --wrapper-width: 120rem;
@@ -95,6 +88,6 @@ $smallPhone: 360px;
       }
     }
   } @else {
-    @warn "Unfortunately, value from first parameter : #{$point} - is not a valid one. Please use valid value.";
+    @warn "Unfortunately, the value from first parameter - #{$point} - is not a valid.";
   }
 }

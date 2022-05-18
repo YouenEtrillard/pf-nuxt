@@ -86,7 +86,7 @@ export default Vue.extend({
   }
 
   @include breakpoint($smallTablet, up) {
-    fill: $main-color;
+    fill: var(--main-color);
   }
 
   // @include breakpoint($smallTablet) {

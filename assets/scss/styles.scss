@@ -107,10 +107,10 @@ h2 {
 
 blockquote {
   --padding-blockquote: 1rem;
-  border: 1px solid $sidebar-bg;
+  border: 1px solid var(--sidebar-bg);
 
   header {
-    border-bottom: 1px solid $sidebar-bg;
+    border-bottom: 1px solid var(--sidebar-bg);
     margin-bottom: var(--padding-blockquote);
     padding: var(--padding-blockquote);
     text-align: left;
