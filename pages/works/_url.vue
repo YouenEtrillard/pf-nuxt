@@ -63,13 +63,10 @@ export default {
     const workByUrl = store.getters.workByUrl(url);
 
     if (payload) {
-      console.log('getting work', payload.url, 'from payload');
       work = payload;
     } else if (workByUrl) {
-      console.log('getting work', url, 'from store');
       work = workByUrl;
     } else {
-      console.log('hitting the API to get work :', url);
       await store.dispatch(`fetchResource`, 'works');
       work = store.getters.workByUrl(url);
     }

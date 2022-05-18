@@ -6,9 +6,9 @@
     <p>
       This is a bit outdated content since all of it highlights things I did
       when I worked at Cognix Systems (+ the angular version of my portfolio).
-      But I liked how I used Nuxt asyncData and generate routes to have each
-      page generated on the server side from the "works" endpoint, so I'm
-      keeping it for now !
+      But I enjoyed using Nuxt asyncData and generate routes property to loop
+      through the items from the "works" endpoint to then have each page
+      generated on the server side, so I'm keeping it for now !
     </p>
     <ul :class="$style.list">
       <li
