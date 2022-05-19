@@ -1,8 +1,12 @@
 <template>
   <div :class="$style.root">
     <CustomIcon />
-    <SidebarElem />
-    <nuxt />
+    <SidebarElem>
+      <template v-slot:bottom>
+        <AnchorNavigation v-if="displayAnchors" :anchors="anchors" />
+      </template>
+    </SidebarElem>
+    <nuxt @passAnchors="handleAnchors(anchors)" />
   </div>
 </template>
 
@@ -10,11 +14,31 @@
 import Vue from 'vue';
 import CustomIcon from '~/components/CustomIcon.vue';
 import SidebarElem from '~/components/SidebarElem.vue';
+import AnchorNavigation from '~/components/AnchorNavigation.vue';
 
 export default Vue.extend({
   components: {
+    AnchorNavigation,
     CustomIcon,
     SidebarElem
+  },
+  data() {
+    return {
+      anchors: [],
+      displayAnchors: false
+    };
+  },
+  created() {
+    //  Ideally I would prefer to have the possibility either
+    //  to pass the data through a layout api / property in the page component
+    //  or to be able to use slots with the nuxt component.
+    //  Let's see what Nuxt 3 has to offer
+    this.$nuxt.$on('passAnchors', (anchors) => {
+      if (anchors?.length > 0) {
+        this.anchors = anchors;
+        this.displayAnchors = true;
+      }
+    });
   },
   methods: {
     getPageName() {

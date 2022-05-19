@@ -45,7 +45,9 @@
         </li>
       </ul>
     </nav>
-    <div :class="$style.bottomWrapper"></div>
+    <div :class="$style.bottomWrapper">
+      <slot name="bottom"></slot>
+    </div>
   </aside>
 </template>
 

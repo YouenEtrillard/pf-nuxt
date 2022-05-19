@@ -1,6 +1,5 @@
 <template>
   <main :class="$style.root">
-    <AnchorNavigation :anchors="anchors" />
     <CoverImage />
     <div :class="$style.content" class="wrapper">
       <IntroMyself />
@@ -21,11 +20,9 @@ import CoverImage from '~/components/CoverImage.vue';
 import FactList from '~/components/FactList.vue';
 import IntroMyself from '~/components/IntroMyself.vue';
 import MyResume from '~/components/MyResume.vue';
-import AnchorNavigation from '~/components/AnchorNavigation.vue';
 
 export default Vue.extend({
   components: {
-    AnchorNavigation,
     CoverImage,
     FactList,
     IntroMyself,
@@ -60,6 +57,9 @@ export default Vue.extend({
   },
   computed: {
     ...mapGetters(['education', 'experience', 'skills'])
+  },
+  mounted() {
+    this.$nuxt.$emit('passAnchors', this.anchors);
   }
 });
 </script>

@@ -41,7 +41,8 @@ export default {
   left: 50px;
 
   @include breakpoint($tablet, up) {
-    left: calc(var(--sidebar-width) + 50px);
+    left: calc(var(--sidebar-width) / 2);
+    transform: translateX(-50%);
   }
 }
 
@@ -69,13 +70,15 @@ export default {
 }
 
 .anchor {
+  --anchor-width: 3.6rem;
+
   text-decoration: none;
   color: white;
   font-size: var(--fz-h2);
   text-shadow: 1px 1px 1px rgba(white, 0.5);
   position: relative;
-  width: 2.6rem;
-  height: 2.6rem;
+  width: var(--anchor-width);
+  height: 4.2rem;
   display: block;
 
   &:hover,
@@ -94,11 +97,12 @@ export default {
   position: absolute;
   top: 6px;
   left: 50%;
+  top: 50%;
   border-radius: 50%;
-  transform: translateX(-50%);
-  border: 8px solid white;
-  box-shadow: 0 0 0 1px var(--main-color);
-  background: var(--main-color);
+  transform: translate3d(-50%, -50%, 0);
+  border: 10px solid var(--main-bg);
+  box-shadow: 0px 0px 3px 1px white;
+  /* background: var(--main-color); */
   z-index: 1;
 
   &::before {
@@ -116,7 +120,7 @@ export default {
   transition: margin 0.25s ease-out;
   margin-left: -100%;
   background: hsl(0deg, 0%, 0%);
-  padding: 0 0.2rem;
+  padding: 0 0.7rem 0 0.5rem;
 }
 
 .anchorTextWrap {
@@ -125,6 +129,9 @@ export default {
   position: absolute;
   white-space: nowrap;
   pointer-events: none;
-  left: 2.6rem;
+  left: var(--anchor-width);
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 4px solid transparent;
 }
 </style>
