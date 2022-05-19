@@ -28,10 +28,16 @@ export default Vue.extend({
       displayAnchors: false
     };
   },
+  watch: {
+    $route() {
+      this.displayAnchors = false;
+    }
+  },
   created() {
     //  Ideally I would prefer to have the possibility either
     //  to pass the data through a layout api / property in the page component
     //  or to be able to use slots with the nuxt component.
+    //  but I didn't want to move the SideBarElemen into each page components
     //  Let's see what Nuxt 3 has to offer
     this.$nuxt.$on('passAnchors', (anchors) => {
       if (anchors?.length > 0) {
