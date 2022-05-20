@@ -36,12 +36,19 @@ export default {
 
 <style module lang="scss">
 .anchorNav {
-  position: fixed;
-  bottom: 50px;
-  left: 50px;
+  --anchor-width: 3.6rem;
+  --anchor-height: 4.2rem;
+
+  position: absolute;
+
+  @include breakpoint($tablet) {
+    right: calc(var(--sidebar-height) / 2);
+    bottom: calc((var(--sidebar-height) - var(--anchor-height)) / 2);
+  }
 
   @include breakpoint($tablet, up) {
     left: calc(var(--sidebar-width) / 2);
+    bottom: calc((var(--sidebar-width) - var(--anchor-height)) / 2);
     transform: translateX(-50%);
   }
 }
@@ -70,15 +77,13 @@ export default {
 }
 
 .anchor {
-  --anchor-width: 3.6rem;
-
   text-decoration: none;
   color: white;
   font-size: var(--fz-h2);
   text-shadow: 1px 1px 1px rgba(white, 0.5);
   position: relative;
   width: var(--anchor-width);
-  height: 4.2rem;
+  height: var(--anchor-height);
   display: block;
 
   &:hover,
@@ -100,7 +105,7 @@ export default {
   top: 50%;
   border-radius: 50%;
   transform: translate3d(-50%, -50%, 0);
-  border: 10px solid var(--main-bg);
+  border: 10px solid var(--sidebar-bg);
   box-shadow: 0px 0px 3px 1px white;
   /* background: var(--main-color); */
   z-index: 1;
@@ -117,10 +122,19 @@ export default {
 }
 
 .anchorText {
+  display: inline-block;
   transition: margin 0.25s ease-out;
-  margin-left: -100%;
   background: hsl(0deg, 0%, 0%);
-  padding: 0 0.7rem 0 0.5rem;
+  background: var(--sidebar-bg);
+  padding: 0.2rem 0.7rem 0.2rem 0.5rem;
+
+  @include breakpoint($tablet) {
+    margin-left: 100%;
+  }
+
+  @include breakpoint($tablet, up) {
+    margin-left: -100%;
+  }
 }
 
 .anchorTextWrap {
@@ -129,9 +143,17 @@ export default {
   position: absolute;
   white-space: nowrap;
   pointer-events: none;
-  left: var(--anchor-width);
   top: 50%;
   transform: translateY(-50%);
-  border-left: 4px solid transparent;
+
+  @include breakpoint($tablet) {
+    right: var(--anchor-width);
+    border-right: 4px solid transparent;
+  }
+
+  @include breakpoint($tablet, up) {
+    left: var(--anchor-width);
+    border-left: 4px solid transparent;
+  }
 }
 </style>
