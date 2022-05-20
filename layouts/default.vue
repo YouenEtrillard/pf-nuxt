@@ -29,8 +29,10 @@ export default Vue.extend({
     };
   },
   watch: {
-    $route() {
-      this.displayAnchors = false;
+    $route(to, from) {
+      if (to.name !== from.name) {
+        this.displayAnchors = false;
+      }
     }
   },
   created() {
