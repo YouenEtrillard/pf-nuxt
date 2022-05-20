@@ -68,7 +68,6 @@ export default Vue.extend({
 .root {
   max-width: 100%;
   position: relative;
-  padding-bottom: 6rem; // TODO - remove once there is a button to fold/hide the anchor nav
 }
 
 .content {

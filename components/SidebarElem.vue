@@ -95,7 +95,6 @@ export default Vue.extend({
 
 .logoWrapper {
   padding: calc(0.2vh + 0.3rem) calc(1 / 6 * var(--sidebar-width));
-  flex-shrink: 0;
 
   > a {
     fill: var(--main-color);
@@ -108,6 +107,25 @@ export default Vue.extend({
       opacity: 0.7;
     }
   }
+}
+
+.bottomWrapper {
+  height: 10rem;
+  width: 10rem;
+  height: var(--sidebar-width);
+  width: var(--sidebar-width);
+  position: relative;
+
+  @include breakpoint($phone) {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+  }
+}
+
+.logoWrapper,
+.bottomWrapper {
+  flex-shrink: 0;
 
   @include breakpoint($tablet, up) {
     height: 10rem;
@@ -124,17 +142,6 @@ export default Vue.extend({
   @include breakpoint($bigPhone) {
     width: 25%;
     max-width: var(--sidebar-width);
-  }
-}
-
-.bottomWrapper {
-  height: 10rem;
-  width: 10rem;
-  height: var(--sidebar-width);
-  width: var(--sidebar-width);
-
-  @include breakpoint($phone) {
-    display: none;
   }
 }
 
