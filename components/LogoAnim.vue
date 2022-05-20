@@ -29,11 +29,12 @@
 export default {
   data() {
     return {
-      addAnimate: false,
+      addAnimate: true,
       syncAnimations: true
     };
   },
   mounted() {
+    this.addAnimate = false;
     this.addAnimate = true;
   }
 };
