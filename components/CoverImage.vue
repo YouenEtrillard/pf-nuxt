@@ -57,21 +57,11 @@ export default {
     height: calc(var(--cover-h) - var(--sidebar-height));
   }
 
-  /* picture {
-    // position: relative;
-    height: 100vh;
-    width: 100%; */
-  // overflow: hidden;
-
   img {
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate3d(-50%,-50%,0);
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
   }
-  /* } */
 }
 </style>
