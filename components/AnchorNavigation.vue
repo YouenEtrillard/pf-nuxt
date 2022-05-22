@@ -32,34 +32,29 @@ export default {
       </div>
       <span class="visually-hidden">Show section navigation</span>
     </button>
-    <nav
-      :class="[
-        $style.anchorNav,
-        {
-          [$style.anchorNavIsOpen]: isOpen
-        }
-      ]"
-    >
-      <ul :class="$style.anchorList">
-        <li
-          v-for="anchor in anchors"
-          :key="anchor.id"
-          :class="$style.anchorWrapper"
-        >
-          <a
-            :class="$style.anchor"
-            :href="`#${anchor.id}`"
-            :title="`Scroll to ${anchor.text} section`"
+    <nav :class="$style.anchorNav">
+      <transition name="slide-in">
+        <ul v-show="isOpen" :class="$style.anchorList">
+          <li
+            v-for="anchor in anchors"
+            :key="anchor.id"
+            :class="$style.anchorWrapper"
           >
-            <span :class="$style.anchorButton"></span>
-            <span :class="$style.anchorTextWrap">
-              <span :class="$style.anchorText">
-                {{ anchor.text }}
+            <a
+              :class="$style.anchor"
+              :href="`#${anchor.id}`"
+              :title="`Scroll to ${anchor.text} section`"
+            >
+              <span :class="$style.anchorButton"></span>
+              <span :class="$style.anchorTextWrap">
+                <span :class="$style.anchorText">
+                  {{ anchor.text }}
+                </span>
               </span>
-            </span>
-          </a>
-        </li>
-      </ul>
+            </a>
+          </li>
+        </ul>
+      </transition>
     </nav>
   </div>
 </template>
@@ -147,8 +142,6 @@ export default {
   --anchor-height: 4.2rem;
 
   position: absolute;
-  opacity: 0;
-  pointer-events: none;
   transform: translateX(-50%);
 
   @include breakpoint($tablet) {
@@ -161,11 +154,6 @@ export default {
     bottom: calc((var(--sidebar-width) - var(--anchor-height)) / 2);
     bottom: 75%;
   }
-}
-
-.anchorNavIsOpen {
-  opacity: 1;
-  pointer-events: initial;
 }
 
 .anchorList {
@@ -274,5 +262,23 @@ export default {
   @include breakpoint($phone, up) {
     pointer-events: none;
   }
+}
+</style>
+
+<style>
+.slide-in-enter-active,
+.slide-in-leave-active {
+  transition: all 0.25s ease-out;
+  transition-property: opacity, transform;
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: none;
+}
+
+.slide-in-enter,
+.slide-in-leave-to {
+  opacity: 0;
+  transform: translateY(2.4rem);
+  pointer-events: none;
 }
 </style>
