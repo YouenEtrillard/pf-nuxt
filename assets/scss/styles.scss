@@ -33,7 +33,7 @@ body {
   max-width: 95%;
 }
 
-*:focus {
+*:focus-visible {
   outline: 2px dotted var(--main-color);
 }
 
