@@ -33,7 +33,7 @@ export default {
       <span class="visually-hidden">Show section navigation</span>
     </button>
     <nav :class="$style.anchorNav">
-      <transition name="slide-in">
+      <transition name="slide-in" appear="true">
         <ul v-show="isOpen" :class="$style.anchorList">
           <li
             v-for="anchor in anchors"
