@@ -92,4 +92,4 @@ sw.*
 # vs code local history
 .history/
 
-backup winscp/
+.backup winscp/
