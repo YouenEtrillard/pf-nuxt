@@ -74,26 +74,33 @@
           </ul>
         </section>
         <section :class="$style.more">
-          <h2>Currently learning</h2>
-          <ul>
-            <li>
-              <p>React</p>
-            </li>
-            <li>
-              <p>Apollo</p>
-            </li>
-          </ul>
-          <h2>Languages</h2>
-          <ul>
-            <li>
-              <p><strong>French</strong> : native speaker</p>
-            </li>
-            <li>
-              <p>
-                <strong>English</strong> : fluent with a strong french accent
-              </p>
-            </li>
-          </ul>
+          <div>
+            <h2>Languages</h2>
+            <ul>
+              <li>
+                <p><strong>French</strong> : native speaker</p>
+              </li>
+              <li>
+                <p>
+                  <strong>English</strong> : fluent with a strong french accent
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2>Currently learning</h2>
+            <ul>
+              <li>
+                <p>React</p>
+              </li>
+              <li>
+                <p>Apollo</p>
+              </li>
+              <li>
+                <p>German</p>
+              </li>
+            </ul>
+          </div>
         </section>
         <section :class="$style.education">
           <h2>Education</h2>
@@ -452,13 +459,20 @@ a {
 
 .skills {
   ul {
-    columns: 2;
     column-gap: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
   p {
     display: inline-block;
   }
+}
+
+.more {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .about {
