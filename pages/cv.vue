@@ -53,7 +53,9 @@
               <p
                 v-if="xp.description && xp.description !== ''"
                 :class="$style.experienceDesc"
-              >{{ xp.description }}</p>
+              >
+                {{ xp.description }}
+              </p>
             </div>
           </li>
         </ul>
@@ -72,6 +74,15 @@
           </ul>
         </section>
         <section :class="$style.more">
+          <h2>Currently learning</h2>
+          <ul>
+            <li>
+              <p>React</p>
+            </li>
+            <li>
+              <p>Apollo</p>
+            </li>
+          </ul>
           <h2>Languages</h2>
           <ul>
             <li>
@@ -182,7 +193,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-
 body {
   --fz-h1: calc(4rem + 1.1vw);
   --fz-subtitle: calc(2.2rem + 0.1vw);
