@@ -10,7 +10,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "test": "jest"
+    "test": "jest",
+    "cv": "node ./cv/gen-pdf.js"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
