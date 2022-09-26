@@ -29,8 +29,8 @@
         <p :class="$style.subheading">Front End Developer / VueJs / Angular</p>
       </div>
       <div :class="$style.infos">
-        <p>youen-etrillard.com</p>
         <p>contact@youen-etrillard.com</p>
+        <p><a href="https://www.youen-etrillard.com">youen.etrillard.com</a></p>
       </div>
     </header>
     <main :class="$style.main">
@@ -62,7 +62,7 @@
       </section>
       <section :class="$style.skillEd">
         <section :class="$style.skills">
-          <h2>Some skills</h2>
+          <h2>Work(ed) with</h2>
           <ul>
             <li
               v-for="(skill, index) in skills"
@@ -224,6 +224,7 @@ h4 {
 h2 {
   font-size: 2.6rem;
   font-size: var(--fz-subtitle);
+  line-height: 1;
   display: inline-block;
   width: 100%;
 }
@@ -347,7 +348,7 @@ a {
 
 .main {
   > section {
-    margin-top: 4.2rem;
+    margin-top: 3rem;
   }
 }
 
